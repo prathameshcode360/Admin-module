@@ -4,6 +4,7 @@ export default class ProductModel {
     this.name = name;
     this.desc = desc;
     this.price = price;
+    this.image = image;
   }
   static getProductArray() {
     return products;
