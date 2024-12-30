@@ -15,6 +15,7 @@ server.use(ejslayout);
 
 // sending html file
 server.get("/", controller.getProducts);
+server.get("/new", controller.getForm);
 server.use(express.static("src/view"));
 
 server.listen(3300, () => {
