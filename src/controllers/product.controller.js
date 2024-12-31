@@ -12,4 +12,9 @@ export default class ProductController {
   getForm(req, res) {
     return res.render("newProduct");
   }
+  addNewProduct(req, res) {
+    ProductModel.addNew(req.body);
+    let products = ProductModel.getProductArray();
+    res.render("product", { products });
+  }
 }

@@ -15,7 +15,12 @@ server.use(ejslayout);
 
 // sending html file
 server.get("/", controller.getProducts);
+
+// parsing form data
+server.use(express.urlencoded({ extended: true }));
+
 server.get("/new", controller.getForm);
+server.post("/", controller.addNewProduct);
 server.use(express.static("src/view"));
 
 server.listen(3300, () => {
