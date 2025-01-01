@@ -19,6 +19,14 @@ export default class ProductModel {
     );
     products.push(newProduct);
   }
+
+  static getProductbyId(id) {
+    return products.find((p) => p.id === id);
+  }
+  static updateProduct(productObj) {
+    const index = products.findIndex((p) => p.id == productObj.id);
+    products[index] = productObj;
+  }
 }
 
 var products = [

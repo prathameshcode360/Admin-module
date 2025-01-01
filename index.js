@@ -22,6 +22,13 @@ server.use(express.urlencoded({ extended: true }));
 
 server.get("/new", controller.getForm);
 server.post("/", validatereq, controller.addNewProduct);
+
+// routing to update product page
+server.get("/updateProduct/:id", controller.getProductView);
+
+//posting the updated page....
+server.post("/updateProduct", controller.postUpdateProduct);
+
 server.use(express.static("src/view"));
 
 server.listen(3300, () => {
